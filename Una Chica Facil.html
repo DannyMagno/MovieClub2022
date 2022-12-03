@@ -138,28 +138,70 @@ body {
 <p><span style="color: #F44336;">Sinopsis:</span></b> <span style="color: #b3b3b3;">Naima tiene 16 años y vive en Cannes. Mientras se da a sí misma el verano como plazo para elegir lo que quiere hacer con su vida, su prima Sofia, de 22 años y con un estilo de vida tan desenfadado como atrayente, viene a pasar las vacaciones con ella. Juntas vivirán un verano inolvidable.</span>
 </div>
 
-<!-- Video Responsive -->
 
-<div class="videoResponsive">
-  <center>
-    <iframe
-      class="responsive-iframe"
-      class="item-video"
-      allowfullscreen=""
-      frameborder="0"
-      height="285px"
-      id="iframe2"
-      onload="$('.iframe-loading').css('background-image');"
-      scrolling="no"
-      src="https://snqplay-player.xyz/embed/02f2f10e-a2ac-46d8-b5d2-91ef93859a80"
-      style="background-color: black; border-color: #fff; border-radius: 10px; border-style: solid; border-width: 2px;;"
-      width="97%"
-    ></iframe>
-  </center>
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!--<link rel="stylesheet" href="https://ia601505.us.archive.org/33/items/TonyX/plyr.css"/>-->
+  <link rel="stylesheet" href="https://nekofile.eu.org/e773aa1a3d259a85c5d1b3oye"/>
+  <link href="https://nekofile.eu.org/b7b021400e6eb024a2515jkeo" rel="stylesheet"/>
+  <link
+  href="https://unpkg.com/@videojs/themes@1/dist/city/index.css"
+  rel="stylesheet"
+/>
+<title></title>
+</head>
+
+<body>
+<div class="reproductor">
+<video  class="plyr" src="https://maxx-project.herokuapp.com/4300382" poster="https://www.themoviedb.org/t/p/w1000_and_h563_face/tJkjdZguScL7aZrHvgOma7rhu8c.jpg" autoplay>
+</video>
 </div>
 
 
+<script src="https://cdn.plyr.io/3.6.4/plyr.js"></script>
+<script>
+const controls = [
+'rewind',
+'play',
+'fast-forward',
+'progress',
+'current-time',
+'duration',
+'mute',
+'volume',
+'captions',
+'settings',
+'pip',
+'airplay',
+'fullscreen',
+'restart',
+'download',
+];
+
+
+document.addEventListener('DOMContentLoaded', () => {
+const player = Plyr.setup('.plyr', { controls });
+});
+/*//<![CDATA[
+const players = Array.from(document.querySelectorAll('.js-player')).map(player => new Plyr(player));
+//]]>*/
 </script>
-<br><br><br>
+
+<script>
+let inicio = document.querySelector(".inicio");
+let vagabundo = document.querySelector(".js-player");
+
+inicio.addEventListerner('load',()=>{
+inicio.forEach(video =>{
+vagabundo.play = true;
+vagabundo.autoplay = true;
+}
+});
+</script>
 </body>
 </html>
+
