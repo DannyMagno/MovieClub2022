@@ -1,0 +1,138 @@
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>FilmGT App</title>
+<!-- Responsive viewport -->
+<meta content='width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' name='viewport'/>
+<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700" rel="stylesheet">
+<link href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+$(document).ready(function(){
+$("select").change(function(){
+$(this).find("option:selected").each(function(){
+var optionValue = $(this).attr("value");
+if(optionValue){
+$(".box").not("." + optionValue).hide();
+$("." + optionValue).show();} else{
+$(".box").hide();}});}).change();});
+</script>
+<style type="text/css">
+/*html{min-height:100%;position:relative;}
+*/
+body{background-color:#000;font-family:'Roboto Condensed', sans-serif;color:#fff;margin:0 0 70px 0;padding:0!important;height:100%;display:inline-block;width:100%;width:-moz-available;width:-webkit-fill-available;width:fill-available;}
+.Wallpaper{padding:0 0 30% 0;background-size:100%;background-repeat:no-repeat;background-color:#181821;border-radius:0px;}
+/*.ConjuntoHeadCont{width:100%;width:-moz-available;width:-webkit-fill-available;width:fill-available;position:relative;z-index:1;}
+*/
+.xs img{width:120px;height:165px;margin-top:-180px;padding:10px;}
+.title{color:fff;margin-top:-100px;text-align:left;margin-left:120px;}
+@media screen and (max-width:600px) 
+.SingleContent h1{font-size: 27px;top: 0;}
+.Wallpaper{padding: 0 0 60% 0;}
+@media screen and (max-width:380px) 
+.Wallpaper{padding: 0 0 55% 0;}
+.sinopsis{margin-top:-20px;padding:10px;}
+info{background:transparent;color:green;font-family:'PT Sans', sans-serif;left:0;right:0;height:2.5em;display:flex;flex-direction:row;align-items:center;justify-content:space-between;text-decoration:none;cursor:pointer;}
+info,a{color:fff;font-size:18px;margin-top:6px;}
+play{background:transparent;color:#fff;left:0;right:0;height:2.5em;display:flex;flex-direction:row;align-items:center;justify-content:space-between;text-decoration:none;cursor:pointer;padding:0px;}
+play,a{color:#fff;font-size:18px;margin-top:-15px;}
+/*Select Box*/
+select{background:transparent;color:#fff;font-family:'PT Sans', sans-serif;font-size:18px;border:solid 0px #fff;border-radius:5px;outline:none;width:150px;height:30px;margin:5px;}
+.box{color:#fff;padding:5px;display:none;margin-top:0;}
+a{text-decoration:none;color:}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+#btn-mas{display:none;}
+.container{position:fixed;bottom:20px;right:20px;}
+.redes a, .icon-mas2{display:block;text-decoration:none;width:55px;height:55px;line-height:55px;text-align:center;border-radius:50%;box-shadow:0px 1px 10px rgba(0,0,0,0.0);transition:all 500ms ease;}
+.redes a{margin-bottom:-15px;opacity:0;visibility:hidden;}
+#btn-mas:checked~ .redes a{margin-bottom:20px;opacity:1;visibility:visible;}
+.icon-mas2{cursor:pointer;background:#ff0030;color:#fff;font-size:23px;}
+#btn-mas:checked ~ .btn-mas .icon-mas2{transform:rotate(137deg);font-size:25px;}
+
+body{background:#161620;}
+#modalxsplus{position:fixed;width:100%;height:100%;top:0px;left:0px;background:#000;display:none;}
+#modalxsplus.abrir{display: block;}
+#modalxsplus-content{position: absolute;width: 100%;height: 100vh;border-radius:0px;left: 0%;top:0px;margin-left: 0%;margin-top:0px;text-align: center;padding-top: 0px;}
+#xsclose{position:fixed;left:0;top:0px;padding:3px;font-size: 35px; height:35px;width:35px;text-align: center;color: #ffffff;cursor: pointer;}
+@media(orientation:landscape){
+#modalxsplus-content{position: fixed;width: 100%;height: 100vh;border-radius:0px;left: 0%;top:0px;margin-left: 0%;margin-top: 0px;text-align: center;padding-top: 0px;}
+#xsclose{position:fixed;right:0;top:0px;padding:3px;font-size:40px;height:30px;width:30px;text-align:center;color:#ffffff;cursor:pointer;}}
+</style>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://ia601505.us.archive.org/33/items/TonyX/plyr.css"/>
+  <link rel="stylesheet" href="https://nekofile.eu.org/3b3c87d3295326fa12062s2dj"/>
+  <link href="https://vjs.zencdn.net/7.20.3/video-js.css" rel="stylesheet"/>
+  <link
+  href="https://unpkg.com/@videojs/themes@1/dist/city/index.css"
+  rel="stylesheet"
+/>
+<title></title>
+</head>
+
+<body>
+<div class="reproductor">
+<video  class="plyr" src="https://maxx-project.herokuapp.com/4494883" poster="https://www.themoviedb.org/t/p/w1000_and_h563_face/4p9MrndEp154yxknw0WOwr3VaVq.jpg" autoplay>
+</video>
+</div>
+
+
+<script src="https://cdn.plyr.io/3.6.4/plyr.js"></script>
+<script>
+const controls = [
+'rewind',
+'play',
+'fast-forward',
+'progress',
+'current-time',
+'duration',
+'mute',
+'volume',
+'captions',
+'settings',
+'pip',
+'airplay',
+'fullscreen',
+'',
+'download',
+];
+
+
+document.addEventListener('DOMContentLoaded', () => {
+const player = Plyr.setup('.plyr', { controls });
+});
+/*//<![CDATA[
+const players = Array.from(document.querySelectorAll('.js-player')).map(player => new Plyr(player));
+//]]>*/
+</script>
+
+<center>Lego Batman: la película</center>
+
+<script>
+let inicio = document.querySelector(".inicio");
+let vagabundo = document.querySelector(".js-player");
+
+inicio.addEventListerner('load',()=>{
+inicio.forEach(video =>{
+vagabundo.play = true;
+vagabundo.autoplay = true;
+}
+});
+</script>
+</body>
+</html>
+<info style="background:#000012;">
+<i></i>
+<i class="fal fa-calendar-alt"><h9 style="font-size:14;"> 2017</h9></i>
+<i class="fal fa-clock"><h9 style="font-size:14;"> 1h 45m</h9></i>
+<i class="fal fa-thumbs-up"><h9 style="font-size:14;"> 72%</h9></i>
+<i></i>
+</info><br>
+<h3 style="color:#ff0030;padding:7px;">SINOPSIS</h3>
+<p style="color:#fff;padding:7px;">Con el irreverente espíritu de diversión que convirtió a "The Lego Movie" en un fenómeno mundial, el autodenominado protagonista de ese conjunto, Lego Batman, protagoniza su propia aventura en la gran pantalla. Pero se están gestando grandes cambios en Ciudad Gótica, y si quiere salvar a la ciudad de la invasión hostil de The Joker, Batman puede tener que dejar a un lado al vigilante, tratar de trabajar con otros y tal vez, solo tal vez, aprender a alegrarse.</p>
+
+</body>
+</html>
